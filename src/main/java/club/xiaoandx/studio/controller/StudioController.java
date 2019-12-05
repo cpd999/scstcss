@@ -15,42 +15,28 @@
  */
 package club.xiaoandx.studio.controller;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import club.xiaoandx.commons.redis.BaseRedisService;
-import club.xiaoandx.studio.entity.User;
-import club.xiaoandx.studio.vo.AdminUser;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import club.xiaoandx.commons.core.Parameter;
 import club.xiaoandx.commons.core.PublicErrorCode;
 import club.xiaoandx.commons.exception.CommonException;
+import club.xiaoandx.commons.redis.BaseRedisService;
 import club.xiaoandx.commons.redis.ExtApiIdempotent;
 import club.xiaoandx.commons.utils.CaptchaUtil;
 import club.xiaoandx.commons.utils.RedisTokenUtil;
 import club.xiaoandx.studio.entity.Studio;
 import club.xiaoandx.studio.service.StudioService;
+import club.xiaoandx.studio.vo.AdminUser;
 import club.xiaoandx.studio.vo.StatusMessage;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 /**  
  * <p>
