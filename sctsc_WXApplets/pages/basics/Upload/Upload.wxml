@@ -1,0 +1,71 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回上一页</view>
+  <view slot="content">上传工作室</view>
+</cu-custom>
+<view class="uploadStyle">
+  <form>
+    <!-- gzshi title -->
+    <view class="cu-form-group">
+      <view class="title">名称：</view>
+      <input placeholder="工作室标题"></input>
+    </view>
+    <!-- gzshi QQ -->
+    <view class="cu-form-group">
+      <view class="title">QQ：</view>
+      <input placeholder="工作室负责人QQ"></input>
+    </view>
+    <!-- gzshi number of people -->
+    <view class="cu-form-group">
+      <view class="title">人数：</view>
+      <input placeholder="工作室成员人数"></input>
+    </view>
+    <!-- gzshi address -->
+    <view class="cu-form-group">
+      <view class="title">地址：</view>
+      <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <!-- gzshi summary -->
+    <view class="cu-form-group align-start">
+      <view class="title">简介：</view>
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="输入工作室简介"></textarea>
+    </view>
+    <!-- gzshi LOGO -->
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        Logo上传
+      </view>
+      <view class="action">
+        {{imgList.length}}/1
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="padding bg-white ">
+      <view class="flex margin-top">
+        <view class="cu-progress round">
+          <view class="bg-green" style="width:{{loading?'100%':''}};"></view>
+        </view>
+        <text class="margin-left">{{lodingSt}}</text>
+      </view>
+    </view>
+    <!-- gzshi submit -->
+    <button class="cu-btn block bg-blue margin-tb-sm lg">
+      <text class="{{submitSt?'cuIcon-loading2 iconfont-spin':''}}"></text> 上传工作室</button>
+  </form>
+</view>
