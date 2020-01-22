@@ -19,7 +19,7 @@
           <view class="hanz">
             <view class="titleS">{{data.sname}}</view>
             <view class="box3">
-              <view class="peopleNumber">目前{{data.snumber}}人</view>
+              <view class="peopleNumber">共{{data.snumber}}人</view>
               <view class="addres">{{data.saddress}}</view>
             </view>
           </view>
@@ -29,7 +29,7 @@
           </view>
 
           <view class="butt">
-             <button class="cu-btn block bg-blue margin-tb-sm lg"> 联系工作室负责人</button>
+             <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="lianxir"> 联系工作室负责人</button>
           </view>
 
         </view>

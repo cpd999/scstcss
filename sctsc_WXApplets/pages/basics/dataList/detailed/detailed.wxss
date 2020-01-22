@@ -54,7 +54,7 @@ page{
   margin-top: 40rpx;
 }
 .hanz .box3 .addres{
-  margin: 0 80rpx;
+  margin: 0 20rpx;
 }
 .jianjie{
   display: flex;

@@ -30,6 +30,14 @@ Page({
       toView: `card_${this.currentView}`
     });
   },
+  lianxir:function(){
+    wx.showModal({
+      title: '召唤师',
+      content: '功能开发中',
+      cancelText: '确定',
+      confirmText: '取消',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

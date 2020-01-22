@@ -7,17 +7,17 @@
     <!-- gzshi title -->
     <view class="cu-form-group">
       <view class="title">名称：</view>
-      <input placeholder="工作室标题"></input>
+      <input placeholder="工作室标题" bindinput="titleInput"></input>
     </view>
     <!-- gzshi QQ -->
     <view class="cu-form-group">
       <view class="title">QQ：</view>
-      <input placeholder="工作室负责人QQ"></input>
+      <input placeholder="工作室负责人QQ" bindinput="sqqInput"></input>
     </view>
     <!-- gzshi number of people -->
     <view class="cu-form-group">
       <view class="title">人数：</view>
-      <input placeholder="工作室成员人数"></input>
+      <input placeholder="工作室成员人数" bindinput="snumberInput"></input>
     </view>
     <!-- gzshi address -->
     <view class="cu-form-group">
@@ -31,7 +31,7 @@
     <!-- gzshi summary -->
     <view class="cu-form-group align-start">
       <view class="title">简介：</view>
-      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="输入工作室简介"></textarea>
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="ssummaryInput" placeholder="输入工作室简介"></textarea>
     </view>
     <!-- gzshi LOGO -->
     <view class="cu-bar bg-white margin-top">
@@ -65,7 +65,7 @@
       </view>
     </view>
     <!-- gzshi submit -->
-    <button class="cu-btn block bg-blue margin-tb-sm lg">
+    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="uplado">
       <text class="{{submitSt?'cuIcon-loading2 iconfont-spin':''}}"></text> 上传工作室</button>
   </form>
 </view>
