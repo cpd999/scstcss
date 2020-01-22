@@ -5,12 +5,12 @@ Page({
     PageCur: 'basics'
   },
   onLoad(){
-    wx.request({
-      url: app.globalData.requestUrl,
-      success:function(e){
-        console.log(e)
-      }
-    })
+    // wx.request({
+    //   url: app.globalData.requestUrl,
+    //   success:function(e){
+    //     console.log(e)
+    //   }
+    // })
   },
   NavChange(e) {
     this.setData({

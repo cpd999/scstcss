@@ -24,7 +24,7 @@
 		s.SSTATUS,
 		s.STIME
 	   FROM
-		studio AS s
+		studio AS s order by s.STIME desc
     </select>
     
     <!-- 添加工作室 -->

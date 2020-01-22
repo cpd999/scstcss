@@ -35,7 +35,7 @@ Component({
       },
       {
         title: '查看工作室',
-        name: 'List',
+        name: 'dataList',
         color: 'orange',
         icon: 'icloading'
       },

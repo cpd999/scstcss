@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回上一页</view>
+  <view slot="content">工作室列表</view>
+</cu-custom>
+
+<scroll-view class="scroll-box" scroll-x scroll-with-animation
+  scroll-into-view="{{toView}}"
+  bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+    <view  class="card-box" >
+      <view class="card">
+        <!-- <text>{{data.sname}}</text> -->
+        <view class="bgk">
+
+          <view class="gzshiLogo">
+            <image src="{{data.slogoPath}}"></image>
+          </view>
+
+          <view class="hanz">
+            <view class="titleS">{{data.sname}}</view>
+            <view class="box3">
+              <view class="peopleNumber">目前{{data.snumber}}人</view>
+              <view class="addres">{{data.saddress}}</view>
+            </view>
+          </view>
+
+          <view class="jianjie">
+          <text>简介:{{data.ssummary}}</text>
+          </view>
+
+          <view class="butt">
+             <button class="cu-btn block bg-blue margin-tb-sm lg"> 联系工作室负责人</button>
+          </view>
+
+        </view>
+      </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,78 @@
+page{
+  overflow: hidden;
+  background: #19b6bb;
+  color: #fff;
+}
+.scroll-box{
+  white-space: nowrap;
+  height: 105vh;
+}
+
+.card-box{
+  display: inline-block;
+}
+
+.card{
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; */
+  height: 80vh;
+  width: 80vw;
+  margin: 5vh 10vw;
+  font-size: 40px;
+  border-radius: 10px;
+  background-color: #b9c6ff;
+  background-image: linear-gradient(135deg, #b9c6ff 0%, #10adeb 50%, #2AF598 100%);
+}
+.bgk{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gzshiLogo{
+  display: inline;
+  margin: 50rpx auto;
+}
+.gzshiLogo image{
+  width: 500rpx;
+  height: 300rpx;
+}
+.hanz{
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 50rpx;
+}
+.hanz .titleS{
+  text-align: center;
+}
+.hanz .box3{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 40rpx;
+}
+.hanz .box3 .addres{
+  margin: 0 80rpx;
+}
+.jianjie{
+  display: flex;
+  margin: 40rpx 50rpx;
+  font-size: 40rpx;
+  line-height:1.5em;
+  word-spacing:50px;
+  vertical-align:middle;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+.butt{
+  width: 500rpx;
+  margin: 30rpx auto;
+}
+.butt button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

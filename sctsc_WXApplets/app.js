@@ -92,6 +92,6 @@ App({
         color: '#ffffff'
       },
     ],
-    requestUrl:"https://api.xiaoandx.club"
+    requestUrl:"https://api.xiaoandx.club/v1/open/studio/"
   }
 })

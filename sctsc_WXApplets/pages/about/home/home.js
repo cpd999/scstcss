@@ -102,8 +102,6 @@ Component({
       })
     }
   },
-
-
   methods: {
     coutNum(e) {
       if (e > 1000 && e < 10000) {

@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回上一页</view>
+  <view slot="content">工作室列表</view>
+</cu-custom>
+
+<view wx:for="{{list}}" wx:key="index">
+ <navigator url='detailed/detailed?id={{list[index].sid}}' open-type='navigate'>
+    <view class="cu-card case {{isCard?'no-card':''}}" >
+        <view class="cu-item shadow">
+          <view class="image">
+            <image src="{{list[index].slogoPath}}" style="height: 120px;"></image>
+          </view>
+        </view>
+    </view>
+  </navigator>
+</view>
