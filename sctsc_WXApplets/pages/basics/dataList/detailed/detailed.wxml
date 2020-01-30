@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回上一页</view>
-  <view slot="content">工作室列表</view>
+  <view slot="content">工作室详情</view>
 </cu-custom>
 
 <scroll-view class="scroll-box" scroll-x scroll-with-animation

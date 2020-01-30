@@ -36,7 +36,7 @@ page{
 }
 .gzshiLogo image{
   width: 500rpx;
-  height: 300rpx;
+  height: 250rpx;
 }
 .hanz{
   font-size: 40rpx;

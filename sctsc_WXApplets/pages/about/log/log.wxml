@@ -3,10 +3,22 @@
   <view class="cu-item text-green">
     <view class="bg-green content shadow">
       <view class="cu-capsule radius">
-        <view class="cu-tag bg-white text-green">v1.0.1</view>
-        <view class="cu-tag line-white">2019/12/20</view>
+        <view class="cu-tag bg-white text-green">v1.0.2</view>
+        <view class="cu-tag line-white">2020/01/30</view>
       </view>
-      <view class="margin-top-sm text-content">1.0新版本上线</view>
+      <view class="margin-top-sm text-content">修改工作室详情页面标题</view>
+      <view class="margin-top-sm text-content">修改Logo展示比例</view>
+      <view class="margin-top-sm text-content">完善版本日志</view>
+      
+    </view>
+  </view>
+  <view class="cu-item text-green">
+    <view class="bg-green content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-green">v1.0.1</view>
+        <view class="cu-tag line-white">2020/01/22</view>
+      </view>
+      <view class="margin-top-sm text-content">1.0.1新版本上线</view>
     </view>
   </view>
 </view>
