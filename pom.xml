@@ -31,10 +31,6 @@
         </dependency>
 
         <!--   SpringBoot设置Undertow  web容器     -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
         <!-- aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
