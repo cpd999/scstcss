@@ -2,7 +2,7 @@
   <view class="UCenter-bg">
     <image src="/images/logo.png" class="png" mode="widthFix"></image>
     <view class="text-xl">学生工作室
-      <text class="text-df">V1.0</text>
+      <text class="text-df">V1.0.2</text>
     </view>
   </view>
     
