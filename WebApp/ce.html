@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>七牛云上传代码</title>
+        <script src="./js/jquery-1.8.3.min.js"></script>
+    </head>
+    <body>
+        <div style="width: 80%;text-align: center;"> 
+        <div>七牛云文件上传</div> <br/>
+        <input type="file" /><button id="sub">确定上传</button>
+        <img id="mypic" width="200px" height="200px" src=""/>
+        <div style="margin-left: auto;margin-top:100px;">图片地址:<input type="text" id="imgUrl" style="width:300px;height: 40px;"></div>
+        </div>
+    </body>
+    <script>
+            //七牛token 七牛云平台安全标识
+            var qiniutoken = '';
+            //七牛云图片base64格式上传地址
+            var uploadUrl = "http://upload.qiniup.com/putb64/-1";
+            //需要上传的图片内容 base64格式
+            var imgStr = '';
+            
+            //七牛云平台 配置的域名
+            var urlHeader = "http://image.xiaoandx.club/";
+ 
+            //获取七牛云token
+            function qnToken() {
+                $.ajax({
+                    url: 'http://127.0.0.1:8080/v1/open/studio/getToken',
+                    type: 'get',
+                    dataType: 'json',
+                    //平台登录token 不重启30天过期
+                    async:false,
+                    success: function(data) {
+                        qiniutoken = data.uptoken;
+                        //console.log(data);
+                        console.log('获取七牛云token为:' + data);
+                    },
+                    error: function(e){
+                        alert(JSON.stringify(e));
+                    }
+                })
+            }
+ 
+            //上传图片
+            function uploadImg() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", uploadUrl, true);
+                //文本类型
+                xhr.setRequestHeader("Content-Type", "application/octet-stream");
+                //七牛认证信息 注意空格
+                xhr.setRequestHeader("Authorization", "UpToken " + qiniutoken);
+                xhr.send(imgStr);
+                //监听状态
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState == 4) {
+                        var result = xhr.responseText;
+                        console.log('上传请求结果数据:' + result);
+                        result = JSON.parse(result);
+                        $("#mypic").attr("src", urlHeader + result.hash);
+                        $("#imgUrl").val(urlHeader + result.hash);
+                    }
+                }
+ 
+            }
+ 
+            //将图片转为base64格式的字符串
+            $('input[type=file]').on('change', function() {
+                var reader = new FileReader();
+                //filses就是input[type=file]文件列表，files[0]就是第一个文件，这里就是将选择的第一个图片文件转化为base64的码
+                reader.readAsDataURL(this.files[0]);
+                reader.onload = function(e) {
+                    //或者 e.target.result都是一样的，都是base64码
+                    imgStr = reader.result.split(',')[1];
+                    console.log('需要上传的base64格式图片:' + imgStr);
+                }
+            });
+            
+            
+            //开始上传
+            $("#sub").click(function(){
+                //获取最新token
+                qnToken();
+                uploadImg();
+            });
+            
+    </script>
+ 
+</html>

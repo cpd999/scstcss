@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="club.xiaoandx.studio.mapper.StudioMapper">
+
+    <sql id="studioColum">
+        `SNAME`,`SNUMBER`,`SADDRESS`,
+        `SQQ`,`SSUMMARY`,`SLOGOPATH`,
+        `SSTATUS`,`STIME`
+    </sql>
+    
+
+    <!-- 查询所有的工作室 -->
+    <select id="getStudioList" resultType="club.xiaoandx.studio.entity.Studio">
+       SELECT 
+		s.SID,
+		s.SNAME,
+		s.SNUMBER,
+		s.SADDRESS,
+		s.SQQ,
+		s.SSUMMARY,
+		s.SLOGOPATH,
+		s.SSTATUS,
+		s.STIME
+	   FROM
+		studio AS s order by s.STIME desc
+    </select>
+    
+    <!-- 添加工作室 -->
+    <insert id="addStudio" parameterType="club.xiaoandx.studio.entity.Studio">
+        insert into `studio`
+        (<include refid="studioColum"/>)
+        values
+        (#{sname},#{snumber},#{saddress},#{sqq},
+         #{ssummary},#{slogoPath},0,#{stime})
+    </insert>
+    
+    <!-- 查询某一个工作室信息 -->
+    <select id="findById" parameterType="java.lang.Integer" resultType="club.xiaoandx.studio.entity.Studio">
+        SELECT 
+        s.SID,s.SNAME,s.SNUMBER,s.SADDRESS,s.SQQ,s.SSUMMARY,s.SLOGOPATH,s.SSTATUS,s.STIME
+       FROM
+        studio AS s
+	   WHERE
+	    s.SID = #{sid}
+    </select>
+    
+    <!-- 修改工作室 -->
+    <update id="updateStudio" parameterType="club.xiaoandx.studio.entity.Studio">
+        update studio
+        set
+            SNUMBER = #{snumber},
+            SADDRESS = #{saddress},
+            SQQ = #{sqq},
+            SSUMMARY = #{ssummary}
+        where SID = #{sid}
+    </update>
+    
+    <!-- 删除工作室 -->
+    <delete id="deleteStudio" parameterType="java.lang.Integer">
+        DELETE FROM studio WHERE SID = #{sid}
+    </delete>
+
+    <!--  管理员登录  -->
+    <select id="doLogin" parameterType="club.xiaoandx.studio.vo.AdminUser" resultType="club.xiaoandx.studio.entity.User">
+        SELECT
+            u.id,
+            u.username,
+            u.`password`
+        FROM
+            `user` AS u
+        WHERE
+            username =#{userName}  AND `password` = #{passWord}
+    </select>
+</mapper>

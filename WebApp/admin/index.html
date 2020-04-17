@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0">
+	<link rel="shortcut icon" href="../images/icon/favicon.ico" type="image/x-icon">
+<title>四川科技职业学院学生工作室管理平台</title>
+<link href="assets/css/Logins.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<style type="text/css">
+		.check{
+			margin: 3px 20px -10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="login_box">
+	      <div class="login_l_img"><img src="assets/img/login-img.png" /></div>
+	      <div class="login">
+	          <div class="login_logo"><a href="#"><img src="assets/img/login_logo.png" /></a></div>
+	          <div class="login_name">
+	               <p>登陆系统</p>
+	          </div>
+
+	            <input name="username" type="text" id="username"  value="用户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='用户名'}">
+		        <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();" >密码</span>
+				<input name="password" type="password" id="password" style="display:none;" onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"/>
+		         <input type="text" class="form-control" id="inputPassword3" name="ucheckC" placeholder="验证码区分大小写" style="width: 50%"><img class="check" id="img" src="http://api.xiaoandx.club/v1/open/studio/user/check.jpg" onclick="refresh()">
+<!--		        <input value="登录" style="width:100%;" onclick="sub()">-->
+				  <button style="width:100%;" class="sub" onclick="sub()">登录</button>
+
+		        <!-- <input value="点击我一下去注册>>" style="width:100%;margin-top: 20px;float: right;" type="submit" onClick="window.open('re.jsp')"> -->
+
+	          <p align="center" id="bq" style="color: red;margin-top: 5px;"></p>
+	      </div>
+	      <div class="copyright">小小工作室 版权所有©2018-2019 技术支持博客：<a href="https://blog.xiaoandx.club/">XIAOANDX</a></div>
+	</div>
+</body>
+<script src="assets/js/ajxa/login.js"></script>
+</html>
