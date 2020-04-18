@@ -11,5 +11,7 @@
 
 ## 小程序体验
 
-![20200417164210](SQL/image/20200417164210.png)
+<div align="center">
+<img src="https://sctsc.xiaoandx.club/images/wxcat.jpg" height="300" width="300" >
+</div>
 
