@@ -1,8 +1,8 @@
 sys:
   version: 1.0
 qinliu:
-  accessKey: 7mYw774OhImScvEks6XR3TAtSp87P68_oiUbfcMb
-  secretKey: fJUdt_T7pX_Vib-Y-BlpKtl2JT7tet1xl2PDq8O2
+  accessKey: xxxxxxxxxxxxxxxxxxx
+  secretKey: xxxxxxxxxxxxxxxxxxx
   bucket: xiaoandx
 
 logging.level.club.xiaoandx: DEBUG
@@ -13,7 +13,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/scstcss_data?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF8&useSSL=false&rewriteBatchedStatements=true&serverTimezone=UTC
     username: root
-    password: 2324671838
+    password: xxxxxxxxxxxxxxxxxxx
     hikari:
       auto-commit: false
       minimum-idle: 2
